@@ -1,0 +1,199 @@
+// COMUNIDAD
+
+    /* Main comunidad */
+
+
+.mainComunidad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .comunidadTextPrincipal{
+        text-align: center;
+        margin-bottom: 30px;
+
+        p{
+            font-size: 18px;
+            margin: 5px 15px;
+            font-weight: 600;
+            color: $colorMarronOscuro;
+        }
+    }
+
+    .comunidadContenidoPrincipal{
+        max-width: 1584px;
+        margin: 0 1.5%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        display: grid;
+        grid-template-columns: 600px auto;
+        grid-template-areas: 
+            "areaBanner areaBanner"
+            "areaVideo areaImagen";
+
+        .comunidadBanner{
+            display: flex;
+            width: 100%;
+            grid-area: areaBanner;
+        }
+
+        .comunidadVideo{
+            background-color: #515151;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            grid-area: areaVideo;
+            color: rgb(225, 225, 225);
+
+            .comunidadVideoVideos{
+                display: flex;
+                justify-content: center;
+                align-content: flex-start;
+                flex-wrap: wrap;
+                row-gap: 10px;
+            }
+
+            div{
+                div{
+                    max-width: 560px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .comunidadImagen{
+            background-color: #a1a1a1;
+            padding: 20px; 
+            display: flex;
+            justify-content: center;
+            grid-area: areaImagen;
+
+            .comunidadImagenImagenes{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-content: flex-start;
+            }  
+
+            .card{
+                max-width: 400px;
+                width: 100%;
+                margin: 2.5%;
+            }
+        }  
+    }
+
+
+    .comunidadSuscripcion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 15px 30px;
+        text-align: center;
+
+        input{
+            @extend %suscripcionInputButton;
+            padding: 0px 5px;
+        }
+        button{
+            @extend %suscripcionInputButton;
+            background-color: $colorBtSuscrip;
+            font-weight: 500;
+            cursor: pointer;
+            
+            &:hover{
+                background-color: $colorBtSuscripHover;
+            }
+        }
+    }
+}
+
+
+    /* main Comunidad @media */
+
+@media screen and (min-width:800px){
+    
+    .comunidadCarousel{
+        display: none;
+    }
+
+    .comunidadCarouselImagenes{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width:1100px){
+
+    .comunidadContenidoPrincipal{
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .comunidadVideo{
+            width: 100%;
+        }
+        
+        .comunidadImagen{
+            width: 100%;
+        }
+    }
+  
+    #idComunidadH1{
+        font-size: 3em;
+    }
+
+    .comunidadTextPrincipal{
+        p{
+            font-size: 1em;
+        } 
+    }    
+}
+
+@media screen and (max-width:800px){
+
+    .comunidadVideoVideos{
+        display: none !important;
+    }
+
+    .comunidadCarousel{
+        max-width: 560px;
+        width: 100%;
+    }
+
+    .comunidadImagenImagenes{
+        display: none !important;
+    }
+
+    .comunidadCarouselImagenes{
+        max-width: 400px;
+        width: 100%;
+
+        .carousel-item{
+            width: 95%;
+        }
+    }
+}
+
+
+@media screen and (max-width:650px){
+    section{
+        .comunidadBanner{
+            .carousel{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px){
+
+    .comunidadVideo{
+        h4{
+            font-size: 1rem;
+        }
+    }
+}
+
+
+

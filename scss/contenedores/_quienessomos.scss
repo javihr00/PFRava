@@ -1,0 +1,100 @@
+// QUIENES SOMOS
+
+    /* main quienessomos */
+
+.mainQuienessomos{
+    display: flex;
+    justify-content: center;
+
+    .boxQuienessomos{
+        @extend %sombraIntensidad2;
+        margin: 1% 2% 2%;
+        padding: 0px 30px;
+        max-width: 1000px;
+        background-color: rgb(245, 245, 245);
+
+        p{
+            text-align: center;
+            margin: 30px 0px;
+            font-size: 1.1rem;
+            font-weight: 500;    
+        }
+
+        #idTextqs1, #idTextqs3{
+            color: $colorMarronClaro
+        }
+
+        #idTextqs2, #idTextqs4{
+            color: $colorMarronOscuro
+        }
+
+        img{
+            width: 100%;
+            max-width: 250px;
+            display: block;
+            margin: 50px auto 20px;
+        }
+    }
+}
+
+
+
+
+
+// Extra: Sección secreta
+
+@media screen and (max-width:500px){
+    #secretSection{
+        display: flex;
+        justify-content: center;
+
+        div{
+            margin: 20px 10px;
+            width: 65px;
+            height: 65px;
+            background-color: tomato;
+            border-radius: 100%;
+            display: flex;
+            
+            .secretText{
+                display: none;
+            }
+
+            .secretClick{
+                color: whitesmoke;
+                font-size: 14px;
+                margin: auto;
+            }
+
+            &:hover{
+                
+                max-width: 400px;
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                margin: 20px 10px;
+                background-color: tomato;
+                text-align: center;
+                border: 1px solid rgba(255, 30, 0, 0.2);
+                box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4); 
+                border-radius: 5px;
+                color: whitesmoke;
+                transition: 1.5s;
+
+                .secretText{
+                    display: inline;
+                }
+
+                .secretClick{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 500px){
+    #secretSection{
+        display: none;
+    }
+}
